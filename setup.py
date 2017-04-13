@@ -23,7 +23,7 @@ class PyTest(TestCommand):
 
 
 setup(
-    name='rmotr.com | Jobs Detector',
+    name='jobs_detector',
     version='0.0.1',
     description="rmotr.com Group Project | Jobs Detector",
     author='rmotr.com',
@@ -34,6 +34,14 @@ setup(
     tests_require=[
         'pytest==2.9.1'
     ],
+    install_requires=[
+        'Click',
+    ],
+    entry_points='''
+        [console_scripts]
+         jobs_detector=jobs_detector.main:jobs_detector
+         hacker_news=jobs_detector.main:hacker_news
+    ''',
     zip_safe=False,
     cmdclass={'test': PyTest},
 )
